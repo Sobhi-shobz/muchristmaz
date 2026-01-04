@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Christmas Wish 🎄</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Snowfall -->
+  <div class="snow"></div>
+
+  <div class="card">
+    <h1>🎅 Merry Christmas!</h1>
+    <h2 id="user"></h2>
+    <p id="message"></p>
+
+    <button onclick="share()">Share This Wish 📤</button>
+  </div>
+
+  <footer>Spread the Christmas Joy 🎄</footer>
+
+  <script>
+    document.getElementById("user").innerText =
+      "From: " + localStorage.getItem("name");
+
+    document.getElementById("message").innerText =
+      localStorage.getItem("msg");
+
+    function share() {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Link copied! Share the joy 🎁");
+    }
+  </script>
+
+</body>
+</html>
